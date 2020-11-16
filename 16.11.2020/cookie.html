@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="cookie.css">
+</head>
+<body>
+    <button class="plus">+</button>
+    <button class="minus">-</button>
+    <div class="counter">0</div>
+
+    <script>
+        let a = document.querySelector('.plus');
+        let b = document.querySelector('.minus');
+        let count = document.querySelector('.counter');
+        /*function click() {
+            count.innerHTML++;
+        }
+
+        a.onclick = click;*/
+
+        a.onclick = () => {
+            let curVal = count.innerHTML;
+            let newValue = Number(curVal) + 1;
+            count.innerHTML = newValue;
+            setCookie('myCount', newValue);
+        }
+
+        b.onclick = () => {
+            let curVal = count.innerHTML;
+            let newValue = Number(curVal) - 1;
+            count.innerHTML = newValue;
+            setCookie('myCount', newValue);
+        }
+
+        getCookie('myCount');
+
+
+        function setCookie(name, value, options = {}) {
+
+            options = {
+                path: '/',
+                // при необходимости добавьте другие значения по умолчанию
+                ...options
+            };
+
+            if (options.expires instanceof Date) {
+                options.expires = options.expires.toUTCString();
+            }
+
+            let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+            for (let optionKey in options) {
+                updatedCookie += "; " + optionKey;
+                let optionValue = options[optionKey];
+                if (optionValue !== true) {
+                    updatedCookie += "=" + optionValue;
+                }
+            }
+
+            document.cookie = updatedCookie;
+        }
+
+
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+    </script>
+</body>
+</html>
