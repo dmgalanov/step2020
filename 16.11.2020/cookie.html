@@ -34,7 +34,11 @@
             setCookie('myCount', newValue);
         }
 
-        getCookie('myCount');
+        document.addEventListener('DOMContentLoaded', function () {
+            let counter = document.querySelector('.counter');
+            let cookieValue = getCookie('myCount');
+            counter.innerHTML = (cookieValue === undefined) ? 0 : cookieValue;
+        })
 
 
         function setCookie(name, value, options = {}) {
