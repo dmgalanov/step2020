@@ -9,7 +9,7 @@ function f_acc() {
     $(this).next().slideToggle(2000);
 };*/
 
-$('.block_item').click(function () {
+/*$('.block_item').click(function () {
     $(this).next().slideToggle(600);
 });
 
@@ -19,5 +19,11 @@ $(document).ready(function () {
     }, function() {
         $(this).next().animate({opacity: "hide", top: "-85"}, "fast");
     });
-})
+})*/
+
+document.querySelector('.div').onclick = function (event) {
+    let target = event.target;
+    if (target.tagName != '.span') return;
+    recor(document.querySelector('.item'));
+}
 
