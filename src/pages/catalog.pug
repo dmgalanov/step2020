@@ -1,0 +1,24 @@
+extends include/layout
+append sharedVars
+    - const pageUrl = '/';
+    - const pageTitle = 'Каталог';
+    - const bodyAdditionClass = '';
+    - const pageAdditionClass = 'main-page';
+block content
+    section.catalog.inner
+        div.catalog-title
+            p коллекция
+            h1 Бамбук
+        ul.list Шелк
+            p Бамбук
+            li.list__item Брюки
+            li.list__item Велосипедки
+            li.list__item Кроп-топ
+            li.list__item Лиф с захлестом
+            li.list__item Лиф с треугольным <br> вырезом
+            li.list__item Лонгслив
+            li.list__item Майка
+            li.list__item Трусики бразильяно
+            li.list__item Трусики слипы
+            li.list__item Трусики слипы <br> на высокой посадке
+            li.list__item Шорты
