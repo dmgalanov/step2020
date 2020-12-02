@@ -26,6 +26,18 @@ html.fixed {
         }
     }
 
+    &.catalog-page .header {
+        background: #FCF1F1;
+    }
+
+    &.catalog-page  {
+        background: #FCF1F1;
+    }
+
+    &.catalog-page .footer-decoration {
+        background: linear-gradient(360deg, #FFE2E2 0%, #FFB0B0 0.01%, #FCF1F1 100%);
+    }
+
     .header {
         background: $colorBg;
         padding: 30px 0;

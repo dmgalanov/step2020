@@ -1,5 +1,15 @@
 #starway {
-  .header__menu{
-    display: none;
+
+  &.catalog-page .header {
+    background: #FCF1F1;
+  }
+
+  .catalog {
+    background: #FCF1F1;
+  }
+
+  .catalog-content {
+    display: flex;
+    justify-content: space-between;
   }
 }
